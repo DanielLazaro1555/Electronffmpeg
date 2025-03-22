@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargador de Videos</title>
+    <title>Descargador de Videos por Daniel Huamán</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Añadir fuente de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Descargador de Videos M3U8</h1>
+<body></body>
+    <div class="container">
+        <header>
+            <h1>Descargador de Videos M3U8</h1>
+        </header>
 
-    <label for="url-video">URL del Video M3U8:</label>
-    <input type="text" id="url-video" placeholder="Introduce la URL del video">
+        <main>
+            <div class="input-group">
+                <label for="url-video">URL del Video:</label>
+                <input type="text" id="url-video" placeholder="Introduce la URL del video">
+                <button id="analizar-btn" class="btn primary">Analizar URL</button>
+            </div>
 
-    <button id="analizar-btn">Analizar URL</button>
+            <div id="file-info" class="info-panel" style="display:none;">
+                <div class="info-grid">
+                    <p id="file-type" class="info-item"></p>
+                    <p id="file-resolution" class="info-item"></p>
+                    <p id="file-format" class="info-item"></p>
+                    <p id="file-codec" class="info-item"></p>
+                    <p id="file-fps" class="info-item"></p>
+                    <p id="file-bitrate" class="info-item"></p>
+                </div>
+                
+                <div class="download-section">
+                    <div class="input-group">
+                        <label for="file-name">Nombre del archivo:</label>
+                        <input type="text" id="file-name" placeholder="Escribe un nombre para el archivo">
+                    </div>
+                    <button id="descargar-btn" class="btn secondary">Descargar</button>
+                </div>
+            </div>
 
-    <!-- Mostrar la información del archivo -->
-    <div id="file-info" style="display:none;">
-        <p id="file-type"></p>
-        <p id="file-resolution"></p>
-        <p id="file-format"></p>
-        <p id="file-codec"></p>
-        <p id="file-fps"></p>
-        <p id="file-bitrate"></p>
-        <label for="file-name">Nombre del archivo:</label>
-        <input type="text" id="file-name" placeholder="Escribe un nombre para el archivo">
-        <button id="descargar-btn">Descargar</button>
+            <div id="progress-container" class="progress-section" style="display:none;">
+                <progress id="progress-bar" value="0" max="100"></progress>
+                <p id="progress-text">Progreso: 0%</p>
+            </div>
+
+            <div class="status-section">
+                <p id="status">Esperando descarga...</p>
+            </div>
+        </main>
     </div>
-
-
-    <!-- Barra de progreso -->
-    <div id="progress-container" style="display:none;">
-        <progress id="progress-bar" value="0" max="100"></progress>
-        <p id="progress-text">Progreso: 0%</p>
-    </div>
-
-    <!-- Estado de la descarga -->
-    <p id="status">Esperando descarga...</p>
 
     <script src="renderer.js"></script>
 </body>
