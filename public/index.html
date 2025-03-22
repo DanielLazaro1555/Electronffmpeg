@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargador de Videos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Descargador de Videos M3U8</h1>
+
+    <label for="url-video">URL del Video M3U8:</label>
+    <input type="text" id="url-video" placeholder="Introduce la URL del video">
+
+    <button id="analizar-btn">Analizar URL</button>
+
+    <!-- Mostrar la información del archivo -->
+    <div id="file-info" style="display:none;">
+        <p id="file-type"></p>
+        <p id="file-resolution"></p>
+        <p id="file-format"></p>
+        <p id="file-codec"></p>
+        <p id="file-fps"></p>
+        <p id="file-bitrate"></p>
+        <label for="file-name">Nombre del archivo:</label>
+        <input type="text" id="file-name" placeholder="Escribe un nombre para el archivo">
+        <button id="descargar-btn">Descargar</button>
+    </div>
+
+
+    <!-- Barra de progreso -->
+    <div id="progress-container" style="display:none;">
+        <progress id="progress-bar" value="0" max="100"></progress>
+        <p id="progress-text">Progreso: 0%</p>
+    </div>
+
+    <!-- Estado de la descarga -->
+    <p id="status">Esperando descarga...</p>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
